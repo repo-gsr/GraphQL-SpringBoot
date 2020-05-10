@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: customer
+  data:
+    mongodb:
+      password: ENC(WkNl5KNVCJVTdqX3dw5SWw==)
+      username: myUserAdmin
+      host: localhost
+      port: 27017
+      database: Customer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+jasypt:
+  encryptor:
+    password: appkey
+server:
+  port: 8081
+jwt:
+  secret: sampleapp
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /customerApiDoc

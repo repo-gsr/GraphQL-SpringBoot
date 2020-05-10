@@ -1,0 +1,38 @@
+spring.application.name=customer
+# MongoDB Properties
+
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=Customer
+spring.data.mongodb.password=ENC(WkNl5KNVCJVTdqX3dw5SWw==)
+spring.data.mongodb.username=myUserAdmin
+## MongoDB Property On DockerCompose
+#spring.data.mongodb.uri=mongodb://mongodb/employee-management
+
+# This is Used By Jasypt Password Encripted 
+
+jasypt.encryptor.password=appkey
+
+#server.port= ${PORT:0}
+server.port= 8081
+jwt.secret=sampleapp
+carrier-service-url = http://CARRIER
+logging.level.org.apache.tomcat: INFO
+logging.level.org.apache.catalina: INFO
+
+# Swagger API doc Path
+springfox.documentation.swagger.v2.path=/customerApiDoc
+
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
+
+# Eureka Registry Details
+---
+spring.profiles=IN
+eureka.instance.instance-id=${spring.application.name}:${random.value}}
+eureka.instance.prefer-ip-address=true
+eureka.instance.hostname=192.168.0.103
+eureka.instance.lease-renewal-interval-in-seconds=10
+eureka.instance.lease-expiration-duration-in-seconds=20
+eureka.client.register-with-eureka=true
+eureka.client.service-url.defaultZone = http://localhost:8083/eureka,http://eureka-registry-us.com:8083/eureka/,http://eureka-registry-sg.com:8084/eureka/,http://eureka-registry-in.com:8082/eureka/

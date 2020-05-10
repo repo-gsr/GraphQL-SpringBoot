@@ -1,0 +1,105 @@
+# Adding Customer
+
+{
+  "fname": "subbareddy",
+  "lname": "venkata",
+  "gmail": "abc@gmail.com",
+  "phonenumber": "1234567898",
+  "paddress": [{
+    "street": "main road",
+    "zipCode": "563214",
+    "city": "banglore",
+    "country": "india",
+    "addType": "Prasent"
+  },
+  {
+    "street": "main road",
+    "zipCode": "563214",
+    "city": "banglore",
+    "country": "india",
+    "addType": "Resident"
+  }
+  ],
+  "signupDate": "2020-04-20"
+}
+
+
+# Upadting Customer
+
+{
+  "requestdata": {
+      "id": "1",
+      "fname": "subbareddy",
+      "lname": "venkata gangala",
+      "gmail": "abc@gmail.com",
+      "phonenumber": "1234567898",
+      "paddress": [
+        {
+          "id": "5ea141fffc818253dc1a2d03",
+          "street": "main road Resident",
+          "zipCode": "563214",
+          "city": "banglore",
+          "country": "india",
+          "addType": "Resident"
+        },
+        {
+          "id": "5ea141fffc818253dc1a2d04",
+          "street": "main road Prasent",
+          "zipCode": "563214",
+          "city": "banglore",
+          "country": "india",
+          "addType": "Prasent"
+        }
+      ],
+      "signupDate": "2020-04-20"
+    }
+}
+
+
+
+
+#Shipping Request 
+
+{
+  "requestdata": {
+  "goodsType": "Home",
+  "shippingRequestDate":"2020-05-02"
+  "pickupLocation": {
+    "street": "main road",
+    "zipCode": "45678",
+    "city": "banglore",
+    "country": "india"
+  },
+  "deliveryLocation": {
+    "street": "main road",
+    "zipCode": "45678",
+    "city": "banglore",
+    "country": "india"
+  },
+  "customerId": "C5"
+}
+}
+
+
+
+
+some Notes 
+
+
+@Bean
+	public WebMvcConfigurer webMvcConfigurerAdapter() {
+		WebMvcConfigurer webMvcConfigurerAdapter = new WebMvcConfigurer() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+						configurer.favorPathExtension(true)
+						.favorParameter(true)
+						.parameterName("media-type")
+						.ignoreAcceptHeader(false)
+						.useJaf(false)
+						.defaultContentType(MediaType.APPLICATION_JSON)
+						.mediaType("xml", MediaType.APPLICATION_XML).mediaType("json", MediaType.APPLICATION_JSON);
+			}
+		};
+		return webMvcConfigurerAdapter;
+	}

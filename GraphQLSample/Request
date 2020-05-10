@@ -1,0 +1,57 @@
+# Adding Customer
+mutation{
+  signUp(customer:{
+    fname:"Suresh",
+    lname:"kumar",
+    gmail:"suresh@gmail.com",
+    phonenumber:"623456789",
+    signupDate:"2020-02-05"
+    address:[{
+      street:"brhind kalamandhir",
+      zipCode:"560037",
+      city:"banglore",
+      country:"India",
+      addType:"Prasent"
+    },{
+      street:"kalamandhir",
+      zipCode:"560037",
+      city:"banglore",
+      country:"India",
+      addType:"Parmanent"
+    }]
+  }) {
+    id
+  }
+}
+
+# Deleting 
+
+mutation{
+  deleteCustomerById(id:"C4")
+}
+
+#Update
+
+mutation{
+  updateCustomerById(customer:{
+    fname:"Suresh",
+    lname:"kumar",
+    gmail:"kumar@gmail.com",
+    phonenumber:"623456789",
+    address:[{
+      street:"brhind kalamandhir",
+      zipCode:"560037",
+      city:"banglore",
+      country:"India",
+      addType:"Parmanent"
+    },{
+      street:"kalamandhir",
+      zipCode:"560037",
+      city:"banglore",
+      country:"India",
+      addType:"Prasent"
+    }]
+  },id:"C5") {
+    id
+  }
+}
